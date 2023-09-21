@@ -2092,9 +2092,9 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 
 [[package]]
 name = "vertix"
-version = "0.2.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fd4f9d58629ed2f16faeb1a2abbaa195b1aef6b3e870ef922432574532980609"
+checksum = "2e615521760cf675fa931cf4ab4aa30c0faa190c4889c9cada661f59fc8654a0"
 dependencies = [
  "anyhow",
  "bytemuck",
