@@ -9,6 +9,8 @@ edition = "2021"
 glam = "0.24.1"
 pollster = "0.3.0"
 vertix = "0.2.1"
+hecs = "0.10.3"
+wgpu = { version = "0.17"}
 
 [build-dependencies]
 anyhow = "1.0"

@@ -418,8 +418,10 @@ dependencies = [
  "fs_extra",
  "glam",
  "glob",
+ "hecs",
  "pollster",
  "vertix",
+ "wgpu",
 ]
 
 [[package]]
