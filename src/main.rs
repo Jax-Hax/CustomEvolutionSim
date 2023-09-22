@@ -56,7 +56,8 @@ fn check_boid_collision(queue: &Queue, boids: QueryMut<(&mut InstanceContainer, 
     
     for (_entity, (game_object, _)) in boids {
         for instance in &mut game_object.instances {
-            instance.rotation.x += 0.01;
+            instance.rotation *= Quat::from_rotation_x(f32::to_radians(1.0));
+            
         }
         game_object.update(queue);
     }
