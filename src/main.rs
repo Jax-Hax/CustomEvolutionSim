@@ -32,7 +32,7 @@ pub async fn run() {
                     let position = Vec3 { x, y, z };
 
                     let rotation =
-                        Quat::from_axis_angle(position.normalize(), f32::to_radians(45.0));
+                        Quat::IDENTITY;
 
                     Instance { position, rotation }
                 })
@@ -57,29 +57,9 @@ fn check_boid_collision(queue: &Queue, boids: QueryMut<(&mut InstanceContainer, 
     for (_entity, (game_object, _)) in boids {
         for instance in &mut game_object.instances {
             instance.rotation *= Quat::from_rotation_x(f32::to_radians(1.0));
-            
         }
         game_object.update(queue);
     }
 }
-fn keyboard_input(state: &mut State, event: &KeyboardInput) {
-    //keyboard inputs
-    match event {
-        KeyboardInput {
-            state: ElementState::Pressed,
-            virtual_keycode: Some(VirtualKeyCode::F),
-            ..
-        } => {
-            for (_entity, (game_object, _)) in state
-                .world
-                .query_mut::<(&mut InstanceContainer, &IsDynamic)>()
-            {
-                for instance in &mut game_object.instances {
-                    instance.position[1] += 0.001;
-                }
-                game_object.update(&state.queue);
-            }
-        }
-        _ => {}
-    }
+fn keyboard_input(_state: &mut State, _event: &KeyboardInput) {
 }
